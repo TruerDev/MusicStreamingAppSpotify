@@ -7,4 +7,7 @@ class AppVectors {
 
   static const String sun = '${basePath}sun$format';
   static const String moon = '${basePath}moon$format';  
+
+  static const String topWavePattern = '${basePath}top_wave_pattern$format';
+  static const String bottomWavePattern = '${basePath}bottom_wave_pattern$format';  
 }
