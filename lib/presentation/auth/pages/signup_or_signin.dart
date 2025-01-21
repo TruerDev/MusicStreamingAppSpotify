@@ -5,6 +5,8 @@ import 'package:spotify_clone_app/common/widgets/button/appbar/app_bar_button.da
 import 'package:spotify_clone_app/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_clone_app/core/configs/assets/app_images.dart';
 import 'package:spotify_clone_app/core/configs/assets/app_vectors.dart';
+import 'package:spotify_clone_app/presentation/auth/pages/signin.dart';
+import 'package:spotify_clone_app/presentation/auth/pages/signup.dart';
 
 class SignupOrSigninPage extends StatelessWidget {
   const SignupOrSigninPage({super.key});
@@ -12,25 +14,34 @@ class SignupOrSigninPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: BasicAppBarButton(),
       body: Stack(
         children: [
-          const BasicAppBarButton(),
           Align(
             alignment: Alignment.topRight,
-            child: SvgPicture.asset(
-              AppVectors.bottomWavePattern,
+            child: Transform.translate(
+              offset: const Offset(200, -100),
+              child: SvgPicture.asset(
+                AppVectors.bottomWavePattern,
+              ),
             ),
           ),
           Align(
             alignment: Alignment.bottomRight,
-            child: SvgPicture.asset(
-              AppVectors.topWavePattern,
+            child: Transform.translate(
+              offset: const Offset(150, 100),
+              child: SvgPicture.asset(
+                AppVectors.topWavePattern,
+              ),
             ),
           ),
           Align(
             alignment: Alignment.bottomLeft,
-            child: Image.asset(
-              AppImages.authBG,
+            child: Transform.translate(
+              offset: const Offset(-20, 0),
+              child: Image.asset(
+                AppImages.authBG,
+              ),
             ),
           ),
 
@@ -45,7 +56,7 @@ class SignupOrSigninPage extends StatelessWidget {
                   SvgPicture.asset(
                     AppVectors.logo,
                   ),
-                  const SizedBox(height: 55),
+                  const SizedBox(height: 50),
                   const Text(
                     'Enjoy Listening To Music',
                     style: TextStyle(
@@ -69,7 +80,14 @@ class SignupOrSigninPage extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: BasicAppButton(
-                          onPressed: (){}, 
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => const SignUpPage(),
+                              ),
+                            );
+                          }, 
                           title: 'Register'
                         ),
                       ),
@@ -77,12 +95,19 @@ class SignupOrSigninPage extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: TextButton(
-                          onPressed: (){}, 
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => const SignInPage(),
+                              ),
+                            );
+                          }, 
                           child: Text(
                             'Sign in',
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600,
                               color: context.isDarkMode ? Colors.white : Colors.black,
                             ),
                           ),
