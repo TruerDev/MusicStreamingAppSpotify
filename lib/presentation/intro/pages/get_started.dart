@@ -30,7 +30,7 @@ class GetStartedPage extends StatelessWidget {
           ),
 
           Container(
-            color: Colors.black.withOpacity(0.15),
+            color: Colors.black.withOpacity(0.05),
           ),
 
           Padding(

@@ -47,7 +47,7 @@ class _ChooseModePageState extends State<ChooseModePage> {
             ),
           ),
           Container(
-            color: Colors.black.withOpacity(0.15),
+            color: Colors.black.withOpacity(0.05),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 40),
